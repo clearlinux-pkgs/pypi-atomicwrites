@@ -4,7 +4,7 @@
 #
 Name     : pypi-atomicwrites
 Version  : 1.4.0
-Release  : 46
+Release  : 47
 URL      : https://files.pythonhosted.org/packages/55/8d/74a75635f2c3c914ab5b3850112fd4b0c8039975ecb320e4449aa363ba54/atomicwrites-1.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/55/8d/74a75635f2c3c914ab5b3850112fd4b0c8039975ecb320e4449aa363ba54/atomicwrites-1.4.0.tar.gz
 Summary  : Atomic file writes.
@@ -14,6 +14,7 @@ Requires: pypi-atomicwrites-license = %{version}-%{release}
 Requires: pypi-atomicwrites-python = %{version}-%{release}
 Requires: pypi-atomicwrites-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+Provides: atomicwrites
 
 %description
 python-atomicwrites
@@ -41,6 +42,7 @@ Summary: python3 components for the pypi-atomicwrites package.
 Group: Default
 Requires: python3-core
 Provides: pypi(atomicwrites)
+Provides: atomicwrites-python3
 
 %description python3
 python3 components for the pypi-atomicwrites package.
