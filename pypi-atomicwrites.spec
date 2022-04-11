@@ -4,7 +4,7 @@
 #
 Name     : pypi-atomicwrites
 Version  : 1.4.0
-Release  : 47
+Release  : 48
 URL      : https://files.pythonhosted.org/packages/55/8d/74a75635f2c3c914ab5b3850112fd4b0c8039975ecb320e4449aa363ba54/atomicwrites-1.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/55/8d/74a75635f2c3c914ab5b3850112fd4b0c8039975ecb320e4449aa363ba54/atomicwrites-1.4.0.tar.gz
 Summary  : Atomic file writes.
@@ -14,7 +14,6 @@ Requires: pypi-atomicwrites-license = %{version}-%{release}
 Requires: pypi-atomicwrites-python = %{version}-%{release}
 Requires: pypi-atomicwrites-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: atomicwrites
 
 %description
 python-atomicwrites
@@ -42,7 +41,6 @@ Summary: python3 components for the pypi-atomicwrites package.
 Group: Default
 Requires: python3-core
 Provides: pypi(atomicwrites)
-Provides: atomicwrites-python3
 
 %description python3
 python3 components for the pypi-atomicwrites package.
@@ -57,7 +55,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641410482
+export SOURCE_DATE_EPOCH=1649714523
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
