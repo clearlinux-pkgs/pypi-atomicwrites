@@ -4,7 +4,7 @@
 #
 Name     : pypi-atomicwrites
 Version  : 1.4.1
-Release  : 51
+Release  : 52
 URL      : https://files.pythonhosted.org/packages/87/c6/53da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2/atomicwrites-1.4.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/87/c6/53da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2/atomicwrites-1.4.1.tar.gz
 Summary  : Atomic file writes.
@@ -13,6 +13,7 @@ License  : MIT
 Requires: pypi-atomicwrites-license = %{version}-%{release}
 Requires: pypi-atomicwrites-python = %{version}-%{release}
 Requires: pypi-atomicwrites-python3 = %{version}-%{release}
+Requires: pypi_atomicwrites_homeassistant
 BuildRequires : buildreq-distutils3
 
 %description
@@ -58,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1657312598
+export SOURCE_DATE_EPOCH=1657639304
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -93,6 +94,9 @@ export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 python3 -tt setup.py build install --root=%{buildroot}-v3
 popd
+## Remove excluded files
+rm -f %{buildroot}*/usr/lib/python3.10/site-packages/atomicwrites/__init__.py
+rm -f %{buildroot}*/usr/lib/python3.10/site-packages/atomicwrites/__pycache__/__init__.cpython-310.pyc
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
