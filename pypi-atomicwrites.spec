@@ -4,7 +4,7 @@
 #
 Name     : pypi-atomicwrites
 Version  : 1.4.1
-Release  : 61
+Release  : 62
 URL      : https://files.pythonhosted.org/packages/87/c6/53da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2/atomicwrites-1.4.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/87/c6/53da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2/atomicwrites-1.4.1.tar.gz
 Summary  : Atomic file writes.
@@ -58,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1659545499
+export SOURCE_DATE_EPOCH=1666707011
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -80,7 +80,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-atomicwrites
-cp %{_builddir}/atomicwrites-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-atomicwrites/a3aac54aa78ad47e5de996080c30f4bf57e39253
+cp %{_builddir}/atomicwrites-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-atomicwrites/a3aac54aa78ad47e5de996080c30f4bf57e39253 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -94,8 +94,8 @@ export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 python3 -tt setup.py build install --root=%{buildroot}-v3
 popd
 ## Remove excluded files
-rm -f %{buildroot}*/usr/lib/python3.10/site-packages/atomicwrites/__init__.py
-rm -f %{buildroot}*/usr/lib/python3.10/site-packages/atomicwrites/__pycache__/__init__.cpython-310.pyc
+rm -f %{buildroot}*/usr/lib/python3.11/site-packages/atomicwrites/__init__.py
+rm -f %{buildroot}*/usr/lib/python3.11/site-packages/atomicwrites/__pycache__/__init__.cpython-311.pyc
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files

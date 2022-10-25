@@ -1,4 +1,4 @@
 # This file contains the output files that need %exclude. Full path
 # names, one per line.
-/usr/lib/python3.10/site-packages/atomicwrites/__init__.py
-/usr/lib/python3.10/site-packages/atomicwrites/__pycache__/__init__.cpython-310.pyc
+/usr/lib/python3.11/site-packages/atomicwrites/__init__.py
+/usr/lib/python3.11/site-packages/atomicwrites/__pycache__/__init__.cpython-311.pyc
